@@ -2,7 +2,7 @@
 
 ## Demo:
 
-Welome to my currency converter, which you can visit here: https://aliorl.github.io/Kalkulatorbolusa/
+Welome to my currency converter, which you can visit here: http://slodkiezycie.eu/kalkulatorbolusa//
 
 ## Page preview:
 
