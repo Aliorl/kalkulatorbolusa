@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/calculator.png">
+    <meta property="og:image" content="images/share1.png">
+    <meta name="title" property="og:title" content="Kalkulator bolusa" />
+    <meta name="description"
+        content="Kalkulator dla osób chorych na cukrzycę, którzy używają penów do wstrzyknięć i chcą dokładniej obliczyć potrzebną dawkę insuliny do podaniać" />
+    <title>Kalkulator bolusa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/container.css" />
+    <link rel="stylesheet" href="css/form.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <script defer src="js/script.js"></script>
+</head>
+
+<body class="body">
+    <div class="container">
+        <form class="form js-form" action="index.php" method="post">
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Kalkulator bolusa</legend>
+                <div class="form__paragraph">
+                    <strong>Bolus:
+                        <?php if ($wynik>0) echo $wynik;?>
+                    </strong>
+                </div>
+                <p class="form__text">
+                    Poniższe ustawienia są domyślne. Zmień je, jeśli w Twoim przypadku są inne.
+                </p>
+                <div>
+                    <label>
+                        <span class="form__labelText">Wrażliwość na insulinę: </span>
+                    </label>
+                    <input class="form__field js-fieldA" type="text" id="a" name="a" placeholder="np. 50" minlength="1"
+                        maxlength="3" required pattern="^[0-9]+([0-9]+)?$" value="<?=$a?>">
+                    <p class="js-infoA"></p>
+                </div>
+                <div>
+                    <label>
+                        <span class="form__labelText">Pożądany poziom glukozy we krwi w mg/dl: </span>
+                    </label>
+                    <input class="form__field js-fieldB" type="text" id="b" name="b" placeholder="np. 100" minlength="1"
+                        maxlength="3" required pattern="^[0-9]+([0-9]+)?$" value="<?=$b?>">
+                    <p class="js-infoB"></p>
+                </div>
+                <div>
+                    <label>
+                        <span class="form__labelText">Wskaźnik insulina-wymiennik: </span>
+                    </label>
+                    <input class="form__field js-fieldC" type="text" id="c" name="c" placeholder="format: np. 1 lub 0.8"
+                        minlength="1" maxlength="3" required pattern="^[0-9]+([\.\.][0-9]+)?$" value="<?=$c?>">
+                    <p class="js-infoC"></p>
+                </div>
+                <div>
+                    <label>
+                        <span class="form__labelText">Obecny poziom glukozy we krwi mg/dl: </span>
+                    </label>
+                    <input class="form__field js-fieldD" type="text" id="d" name="d" placeholder="np. 150" minlength="1"
+                        maxlength="3" required pattern="^[0-9]+([0-9]+)?$" value="<?=$d?>">
+                    <p class="js-infoD"></p>
+                </div>
+                <div>
+                    <label>
+                        <span class="form__labelText">Ilość WW: </span>
+                    </label>
+                    <input class="form__field js-fieldE" type="text" id="e" name="e" placeholder="format: np. 1 lub 2.5"
+                        minlength="1" maxlength="3" required pattern="^[0-9]+([\.\.][0-9]+)?$" value="<?=$e?>">
+                    <p class="js-infoE"></p>
+                </div>
+            </fieldset>
+            <p>
+                <input class="form__button" type="submit" id="submit" value="Oblicz bolus">
+            </p>
+        </form>
+    </div>
+    <footer class="footer">
+        ©Copyright 2022 Alicja Orlik. All rights reversed.
+    </footer>
+</body>
+
+</html>
